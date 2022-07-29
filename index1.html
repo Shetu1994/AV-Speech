@@ -39,25 +39,12 @@ function myEmbedFunc(seq, video_id) {
   <hr />
   <p>&nbsp;</p>
   <h2><a name="comparison_with_audio_visual" id="comparison_with_audio_visual"></a>Abstract</h2>
-  <p align="Left">Speech enhancement is the task of enhancing the speech of the target speaker from the background
-    interference or noise. Recent approaches articulate speech enhancement as a supervised learning
-    process, where discriminatory features of speech, speakers, and interference are learned during
-    the training process. Whereas traditional audio-only speech enhancement approaches cannot
-    solve the cocktail party problem, the audio-visual approaches have shown remarkable success
-    in such scenarios. In this work, we have re-implemented the audio-visual multi-modal deep
-    neural network structure presented in Google looking to listen project. We further explored different visual features that
-    are commonly discussed in the literature. Our study shows that using visual features can lead
-    to a significant improvement over audio-only methods to enhance the visually present speaker
-    in a multi-talker situation. We have also demonstrated that even the raw lip images based
-    visual features can also successfully be used for the speaker-independent AV speech enhancement
-    model. Our newly proposed AV-Lips model using raw lip images as visual features achieves 6.9
-    dB SI-SDR gain in a single interferer case, compared to 7.2 dB SI-SDR gain achieved by the
-    baseline AV-facNy model using face embeddings as the visual feature. Further analysis with
-    multiple interferers indicates that the AV models trained with a sufficiently large dataset with
-    a single interferer, can also moderately enhance the target speaker from extremely interfered
-    noisy speech. Our study also suggests that the visual features don't help in traditional speech
-    denoising tasks, rather it can degrade the desired speech if corrupted or unreliable visual features
-    are employed for this task.</p>
+  <p align="Left">Audio-visual speech enhancement (AVSE) methods use both audio and visual features for the task of speech enhancement and the use of visual features has been shown to be particularly effective in multi-speaker scenarios. 
+	  In the majority of deep neural network (DNN) based AVSE methods, the audio and visual data are first processed separately using different sub-networks, and then the learned features are fused to uti-lize the information from both modalities.
+	  There have been various studies on suitable audio input features and network architectures, however, to the best of our knowledge, there is no published study that has investigated which visual features are best suited for this specific task.
+	  In this work, we perform an empirical study of the most commonly used visual features for DNN based AVSE, the pre-processing requirements for each of these features, and investigate their influence on the performance.
+	  Our study shows that despite the overall better performance of embedding-based features, their computationally intensive pre-processing makes their use difficult in low resource systems. 
+	  For such systems, optical flow or raw pixels-based features might be better suited.</p>
   <p>&nbsp;</p>
   <h3 colspan="10" align="center">Comparison of different visual features with respect to audio-only model</h3>
   <table width="650" border="0" align="center">
@@ -75,7 +62,7 @@ function myEmbedFunc(seq, video_id) {
       </tr>
       <tr>
         <td><video width="250" id="hou_vid1" controls="controls" >
-          <source src="other_methods/demo/Mix_Grid_s8_swau1n.mp4" type="video/mp4" />
+          <source src="Examples/AV1.mp4" type="video/mp4" />
         </video></td>
         <td>&nbsp;</td>
 		<td><video width="250" id="hou_vid2" controls="controls" >
